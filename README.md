@@ -22,6 +22,8 @@ TF-IDF（Term Frequency-Inverse Document Frequency）是一种用于评估词语
  **计算TF-IDF得分**  
    对每个词计算 `TF * IDF`，并排序取Top-N作为关键词。
 # 代码核心功能说明
+## classify代码截图
+<img src=
 ## get_words() 函数：
 ```python
 def get_words(filename):
@@ -35,4 +37,29 @@ def get_words(filename):
             words.extend(line)
     return words
 all_words = []
-该函数从一个文本文件中读取文本并进行处理，读取文本：通过 open() 打开文件并按行读取，去除无效字符：使用正则表达式 re.sub() 来去除常见的无效字符（如数字、标点符号等），分词：利用 jieba.cut() 对每一行文本进行分词处理。
+```
+该函数从一个文本文件中读取文本并进行处理
+**读取文本**：通过 open() 打开文件并按行读取
+**去除无效字符**：使用正则表达式 re.sub() 来去除常见的无效字符（如数字、标点符号等）
+**分词**：利用 jieba.cut() 对每一行文本进行分词处理。
+
+## get_top_words() 函数：
+```python
+def get_top_words(top_num):
+    """遍历邮件建立词库后返回出现次数最多的词"""
+    filename_list = ['邮件_files/{}.txt'.format(i) for i in range(151)]
+    # 遍历邮件建立词库
+    for filename in filename_list:
+        all_words.append(get_words(filename))
+    # itertools.chain()把all_words内的所有列表组合成一个列表
+    # collections.Counter()统计词个数
+    freq = Counter(chain(*all_words))
+    return [i[0] for i in freq.most_common(top_num)]
+top_words = get_top_words(100)
+```
+该函数用于构建一个包含文本数据中出现次数最多的词的词汇表：
+**读取文件**：通过文件名列表 filename_list 来读取多个文件（邮件文件）。
+**提取所有词汇**：对于每个文件，调用 get_words() 来提取词汇。
+**统计词频**：通过 itertools.chain(*all_words) 将多个文件的词汇合并为一个列表，然后使用 collections.Counter 来统计各个词的频率。
+
+
