@@ -22,8 +22,6 @@ TF-IDF（Term Frequency-Inverse Document Frequency）是一种用于评估词语
  **计算TF-IDF得分**  
    对每个词计算 `TF * IDF`，并排序取Top-N作为关键词。
 # 代码核心功能说明
-## classify代码截图
-<img src=
 ## get_words() 函数：
 ```python
 def get_words(filename):
@@ -62,4 +60,11 @@ top_words = get_top_words(100)
 **提取所有词汇**：对于每个文件，调用 get_words() 来提取词汇。
 **统计词频**：通过 itertools.chain(*all_words) 将多个文件的词汇合并为一个列表，然后使用 collections.Counter 来统计各个词的频率。
 
+## classify代码截图
+<img src=
 
+## 样本平衡处理
+<img src=
+
+## 增加模型评估指标
+<img src=
