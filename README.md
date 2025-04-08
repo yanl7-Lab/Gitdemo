@@ -28,9 +28,10 @@ TF-IDF（Term Frequency-Inverse Document Frequency）是一种用于评估词语
 ### 多项式朴素贝叶斯分类器
 - **贝叶斯定理**：  
   $$
-  P(Y|X) = \frac{P(X|Y) \cdot P(Y)}{P(X)}
+ P(Y∣X)= 
+P(X)
+P(X∣Y)⋅P(Y)
   $$  
-  其中，\( Y \) 是邮件类别，\( X \) 是特征向量。
 - **条件独立性假设**：  
   假设特征之间在给定类别 \( Y \) 的条件下是相互独立的。
 - **多项式分布**：  
