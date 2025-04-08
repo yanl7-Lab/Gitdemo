@@ -61,10 +61,10 @@ top_words = get_top_words(100)
 **统计词频**：通过 itertools.chain(*all_words) 将多个文件的词汇合并为一个列表，然后使用 collections.Counter 来统计各个词的频率。
 
 ## classify代码截图
-<img src=
+<img src=https://github.com/yanl7-Lab/Gitdemo/blob/main/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-04-07%20152649.png>
 
 ## 样本平衡处理
-<img src=
+<img src=https://github.com/yanl7-Lab/Gitdemo/blob/main/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-04-07%20152703.png>
 
 ## 增加模型评估指标
-<img src=
+<img src=https://github.com/yanl7-Lab/Gitdemo/blob/main/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-04-07%20152713.png>
