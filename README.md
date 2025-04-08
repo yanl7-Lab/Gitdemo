@@ -27,9 +27,9 @@ TF-IDF（Term Frequency-Inverse Document Frequency）是一种用于评估词语
 ## 算法基础
 ### 多项式朴素贝叶斯分类器
 - **贝叶斯定理**：  
-  \[
+  $$
   P(Y|X) = \frac{P(X|Y) \cdot P(Y)}{P(X)}
-  \]  
+  $$  
   其中，\( Y \) 是邮件类别，\( X \) 是特征向量。
 - **条件独立性假设**：  
   假设特征之间在给定类别 \( Y \) 的条件下是相互独立的。
@@ -53,9 +53,9 @@ TF-IDF（Term Frequency-Inverse Document Frequency）是一种用于评估词语
 
 ### TF-IDF特征加权
 - **数学表达**：  
-  \[
+  $$
   \text{TF-IDF}(t, d) = \text{TF}(t, d) \cdot \text{IDF}(t)
-  \]  
+  $$  
   其中，\( \text{TF}(t, d) \) 是词 \( t \) 在文档 \( d \) 中的频率，\( \text{IDF}(t) \) 是词 \( t \) 在所有文档中的逆文档频率。
 - **实现差异**：突出重要词汇，抑制高频但无意义的词汇。
 
